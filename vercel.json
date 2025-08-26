@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/tri-level-demo", "destination": "/api/tri-level-demo" }
+  ]
+}

@@ -44,6 +44,23 @@ app.post("/tri-level-demo", (req, res) => {
   res.json({ buyerId, amount, payouts, total });
 });
 
+// Vercel-style API route alias for local testing
+app.post('/api/tri-level-demo', (req, res) => {
+  // reuse same logic as /tri-level-demo
+  const {
+    buyerId = 'E',
+    amount = 1000,
+    percentages = [0.10, 0.06, 0.03],
+    maxLevels = 3,
+    capPerTx = null,
+    rounding = 'round-2'
+  } = req.body || {};
+
+  const payouts = computeTrilevelPayouts({ buyerId, amount, percentages, maxLevels, capPerTx, rounding, getSponsorOf });
+  const total = payouts.reduce((sum, p) => sum + p.amount, 0);
+  res.json({ buyerId, amount, payouts, total });
+});
+
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname, "public", "index.html"));
 });
