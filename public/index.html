@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Tri-Level Demo</title>
+  <style>
+    body{font-family:system-ui, -apple-system, 'Segoe UI', Roboto, Arial;background:#f6f7f9;margin:0;padding:20px}
+    .card{max-width:720px;margin:0 auto;background:#fff;padding:18px;border-radius:8px;border:1px solid #eee}
+    label{display:block;margin-top:8px;font-weight:600}
+    select,input{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #ddd}
+    button{margin-top:12px;padding:10px 14px;border-radius:6px;border:none;background:#1366d6;color:#fff}
+    pre{background:#fafafa;padding:12px;border-radius:6px;border:1px solid #eee;margin-top:12px;white-space:pre-wrap}
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h2 style="margin:0 0 8px 0">Tri-Level Referral Demo (10/6/3)</h2>
+    <p style="margin:0 0 12px;color:#666">Pure demo: one function, one simulate button.</p>
+
+    <label for="buyer">Buyer</label>
+    <select id="buyer">
+      <option value="E">Eddy (E)</option>
+      <option value="D">Dima (D)</option>
+      <option value="C">Chuma (C)</option>
+      <option value="B">Boris (B)</option>
+      <option value="A">Alice (A)</option>
+    </select>
+
+    <label for="amount">Amount</label>
+    <input id="amount" type="number" value="1000">
+
+    <div>
+      <button id="simulate">Simulate</button>
+      <span id="status" style="margin-left:12px;color:#666">Ready</span>
+    </div>
+
+    <pre id="output">No simulation yet. Click Simulate.</pre>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
